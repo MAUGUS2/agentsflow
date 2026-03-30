@@ -1,0 +1,21 @@
+{
+  "name": "agentsflow",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Agents flowing between your tools — the universal AI agent manager",
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "eslint packages/*/src",
+    "typecheck": "tsc --noEmit",
+    "dev": "pnpm --filter @agentsflow/cli dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MAUGUS2/agentsflow"
+  },
+  "keywords": ["ai", "agents", "agent-manager", "claude", "codex", "cursor", "copilot", "antigravity", "windsurf", "mcp", "orchestration", "multi-agent"],
+  "author": "MAUGUS <maugus.gate@gmail.com>",
+  "license": "MIT"
+}

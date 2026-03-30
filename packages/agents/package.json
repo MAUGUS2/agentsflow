@@ -1,0 +1,13 @@
+{
+  "name": "@agentsflow/agents",
+  "version": "0.0.1",
+  "description": "Agent registry and definitions for AgentsFlow — metadata for all supported AI agents",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MAUGUS2/agentsflow",
+    "directory": "packages/agents"
+  },
+  "keywords": ["ai", "agents", "registry", "claude", "codex", "cursor", "copilot"]
+}

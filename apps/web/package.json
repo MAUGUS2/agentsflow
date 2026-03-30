@@ -1,0 +1,7 @@
+{
+  "name": "@agentsflow/web",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Reserved for AgentsFlow Cloud — Next.js hosted dashboard (future)",
+  "license": "MIT"
+}

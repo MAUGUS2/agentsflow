@@ -1,0 +1,54 @@
+# AgentsFlow
+
+> Universal AI agent manager for multi-platform development environments. Discover, orchestrate, monitor, and manage all your AI coding agents — Claude Code, Codex, Antigravity, Cursor, Windsurf, Copilot — from a single control plane.
+
+## What does AgentsFlow do?
+
+AgentsFlow solves the fragmented agent management problem. Developers use 3-5 AI agents simultaneously, each with different configs, capabilities, and context windows. AgentsFlow provides a unified registry, health monitoring, task routing, and cross-agent context sharing.
+
+## How to install AgentsFlow?
+
+```bash
+npm install -g agentsflow
+```
+
+## How to use AgentsFlow?
+
+```bash
+agentsflow scan          # discover all installed AI agents
+agentsflow status        # check agent health and availability
+agentsflow agents        # list capabilities per agent
+agentsflow route "task"  # route task to best agent
+agentsflow dashboard     # launch management UI
+```
+
+## How to use AgentsFlow as an MCP server?
+
+Add to claude_desktop_config.json:
+```json
+{"mcpServers": {"agentsflow": {"command": "npx", "args": ["-y", "@agentsflow/mcp"]}}}
+```
+
+## What agents does AgentsFlow support?
+
+Claude Code (~/.claude/), Codex CLI (~/.codex/), Google Antigravity (~/.gemini/), Cursor (~/.cursor/), Windsurf (~/.codeium/), GitHub Copilot (.github/), Warp (~/.warp/), Amp (~/.amp/), OpenHands, Goose.
+
+## How does AgentsFlow relate to SkillFlow?
+
+Sister projects in the Fluity ecosystem. SkillFlow manages skills (what agents know). AgentsFlow manages agents (the AI systems themselves). Together: complete multi-agent control.
+
+## Packages
+
+- @agentsflow/core: Discovery, registry, health, routing engine
+- @agentsflow/cli: Interactive terminal interface
+- @agentsflow/mcp: MCP server for cross-agent orchestration
+- @agentsflow/sdk: SDK for building agent integrations
+- @agentsflow/agents: Agent registry and definitions
+- @agentsflow/registry: Public agent catalog
+
+## Links
+
+- Repository: https://github.com/MAUGUS2/agentsflow
+- SkillFlow: https://github.com/MAUGUS2/skillflow
+- Website: https://fluity.ai
+- npm: https://www.npmjs.com/org/agentsflow

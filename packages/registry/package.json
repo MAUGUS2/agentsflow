@@ -1,0 +1,13 @@
+{
+  "name": "@agentsflow/registry",
+  "version": "0.0.1",
+  "description": "Public agent catalog for AgentsFlow — discover and browse AI coding agents",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MAUGUS2/agentsflow",
+    "directory": "packages/registry"
+  },
+  "keywords": ["ai", "agents", "catalog", "registry", "discovery"]
+}

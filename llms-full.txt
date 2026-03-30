@@ -1,0 +1,121 @@
+# AgentsFlow — Complete Documentation
+
+> Universal AI agent manager for multi-platform development environments. Discover, orchestrate, monitor, and manage all your AI coding agents from a single control plane.
+
+## What is AgentsFlow?
+
+AgentsFlow is a unified platform to discover, orchestrate, monitor, and manage AI coding agents across every tool and environment you use — from a single control plane. It sits above individual agents (Claude Code, Codex, Cursor, Copilot, Antigravity, Windsurf) and provides the management layer that no single vendor will build.
+
+## What problem does AgentsFlow solve?
+
+The AI agent landscape in 2026 is fragmented by design. Each vendor builds their agent as a silo. Developers use 3-5 agents simultaneously with no unified view, no cross-agent orchestration, no shared context, no performance monitoring, and manual agent selection for every task.
+
+AgentsFlow provides:
+- Agent Discovery — Automatically detect all installed AI agents, versions, and configurations
+- Unified Registry — One place to see every agent, capabilities, health, and status
+- Task Routing — Route tasks to the best agent based on type, complexity, and strengths
+- Context Sharing — Share relevant context between agents without duplicating tokens
+- Health Monitoring — Track availability, response times, and error rates
+- Config Management — Manage configurations from one place, sync across environments
+
+## Supported agents
+
+| Agent | Vendor | Config Directory |
+|-------|--------|------------------|
+| Claude Code | Anthropic | ~/.claude/ |
+| Cowork | Anthropic | Via plugins |
+| Codex CLI | OpenAI | ~/.codex/ |
+| Google Antigravity | Google | ~/.gemini/ |
+| Cursor | Anysphere | ~/.cursor/ |
+| Windsurf | Codeium | ~/.codeium/ |
+| GitHub Copilot | Microsoft | .github/ |
+| Warp AI | Warp | ~/.warp/ |
+| Amp | Sourcegraph | ~/.amp/ |
+| OpenHands | All Hands AI | .openhands/ |
+| Goose | Block | ~/.goose/ |
+
+## Architecture
+
+AgentsFlow follows a 4-layer architecture:
+
+1. @agentsflow/core — Engine: discovery, registry, health checks, task routing, context bridge
+2. @agentsflow/cli — Interactive CLI (Commander.js) — primary interface, CLI-first (~200 tokens/command)
+3. @agentsflow/mcp — MCP server for agents that support MCP — progressive disclosure, minimal schemas
+4. @agentsflow/sdk — SDK for developers to build custom agent integrations
+
+Apps layer:
+- apps/dashboard — Vite + React (local management dashboard)
+- apps/web — Next.js (AgentsFlow Cloud, future)
+
+### Design principles
+
+1. CLI-first, MCP-optional — CLI costs ~200 tokens vs 44,000+ for MCP schemas
+2. Agent-agnostic — Treats every agent as first-class citizen
+3. Progressive disclosure — Only essential metadata at startup
+4. Complementary — Doesn't replace agents, makes them work together
+
+## CLI Commands
+
+```bash
+agentsflow scan              # Discover all installed AI agents
+agentsflow status            # Health and availability per agent
+agentsflow agents            # List agents with capabilities
+agentsflow agents --detail   # Detailed agent info
+agentsflow config            # View/edit agent configurations
+agentsflow route "task"      # Route task to best agent
+agentsflow context share     # Share context between agents
+agentsflow dashboard         # Launch React management UI
+agentsflow --help            # Full command reference
+```
+
+## MCP Server
+
+Add to claude_desktop_config.json:
+```json
+{
+  "mcpServers": {
+    "agentsflow": {
+      "command": "npx",
+      "args": ["-y", "@agentsflow/mcp"]
+    }
+  }
+}
+```
+
+MCP Tools:
+- agentsflow_scan — Discover installed agents
+- agentsflow_status — Check agent health
+- agentsflow_route — Route task to best agent
+- agentsflow_context — Share context between agents
+- agentsflow_config — Read/write agent configurations
+
+## Packages
+
+| Package | Description |
+|---------|-------------|
+| @agentsflow/core | Engine — discovery, registry, health, routing |
+| @agentsflow/cli | Interactive terminal interface |
+| @agentsflow/mcp | MCP server for cross-agent orchestration |
+| @agentsflow/sdk | SDK for building agent integrations |
+| @agentsflow/agents | Agent registry and definitions |
+| @agentsflow/registry | Public agent catalog |
+
+## Relation to SkillFlow
+
+AgentsFlow and SkillFlow are sister projects in the Fluity ecosystem:
+- SkillFlow (https://github.com/MAUGUS2/skillflow) manages skills — what agents know how to do
+- AgentsFlow manages agents — the AI systems themselves
+
+Together they provide complete visibility and control over multi-agent development environments.
+
+## Tech Stack
+
+TypeScript (strict), pnpm workspaces, tsup (build), Zod (validation), Commander.js (CLI), MCP SDK, React 18, Vite, Tailwind CSS, Vitest.
+
+## Links
+
+- Repository: https://github.com/MAUGUS2/agentsflow
+- SkillFlow: https://github.com/MAUGUS2/skillflow
+- Website: https://fluity.ai
+- npm: https://www.npmjs.com/org/agentsflow
+- Agent Skills Spec: https://agentskills.io/specification

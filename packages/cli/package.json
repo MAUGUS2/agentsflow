@@ -1,0 +1,16 @@
+{
+  "name": "@agentsflow/cli",
+  "version": "0.0.1",
+  "description": "Interactive CLI for AgentsFlow — manage AI agents from your terminal",
+  "main": "dist/index.js",
+  "bin": {
+    "agentsflow": "./bin/agentsflow.js"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MAUGUS2/agentsflow",
+    "directory": "packages/cli"
+  },
+  "keywords": ["ai", "agents", "cli", "agent-manager", "terminal", "orchestration"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@agentsflow/dashboard",
+  "version": "0.0.1",
+  "private": true,
+  "description": "React dashboard for AgentsFlow — visual agent management and monitoring",
+  "license": "MIT"
+}
